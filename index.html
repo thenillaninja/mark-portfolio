@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mark Evans — builder, creator, problem solver." />
+  <title>Mark Evans | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="intro" class="intro" aria-label="Animated site intro">
+    <button id="skipIntro" class="skip-intro" type="button">Skip dog</button>
+    <div class="scanlines"></div>
+    <div class="boot-copy" aria-live="polite">
+      <span id="bootText">INITIALIZING PORTFOLIO</span><span class="cursor">_</span>
+    </div>
+
+    <div id="loaderUnit" class="loader-unit">
+      <div class="spinner" aria-hidden="true"></div>
+      <div id="loadingText" class="loading-text">LOADING...</div>
+    </div>
+
+    <div id="tato" class="tato" aria-hidden="true">
+      <div class="dog-body">
+        <div class="dog-ear ear-left"></div>
+        <div class="dog-ear ear-right"></div>
+        <div class="dog-head">
+          <div class="dog-eye eye-left"></div>
+          <div class="dog-eye eye-right"></div>
+          <div class="dog-nose"></div>
+        </div>
+        <div class="dog-torso"></div>
+        <div class="dog-leg leg-front"></div>
+        <div class="dog-leg leg-back"></div>
+        <div class="dog-tail"></div>
+      </div>
+    </div>
+
+    <div id="sparkField" class="spark-field" aria-hidden="true"></div>
+    <div id="marked" class="marked">TERRITORY MARKED.</div>
+  </div>
+
+  <header class="site-header">
+    <a href="#top" class="brand">ME<span class="brand-dot">.</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">BUILDER / CREATOR / PROBLEM SOLVER</p>
+        <h1>Mark<br />Evans</h1>
+        <p class="hero-text">
+          I build practical ideas, memorable digital experiences, and projects that combine technology, design, and purpose.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View projects</a>
+          <button class="button button-ghost" id="replayIntro" type="button">Replay Tato intro</button>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="grid-plane"></div>
+        <div class="hero-tag">EST. 2003 / REBUILT 2026</div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="section-label">01 / ABOUT</div>
+      <div class="section-content">
+        <h2>Still building the next chapter.</h2>
+        <p>
+          My background spans leadership, operations, entrepreneurship, web design, AI tools, and creative problem-solving. I first experimented with web design during the Flash era and recently returned to building with modern tools.
+        </p>
+        <p>
+          Today, I’m focused on creating useful technology, developing the Chronic Illness Warrior Foundation, learning local AI workflows, and turning ideas into working projects.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section projects-section">
+      <div class="section-label">02 / PROJECTS</div>
+      <div class="section-content">
+        <h2>Selected work.</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-number">01</div>
+            <p class="project-type">NONPROFIT / BRAND / WEB</p>
+            <h3>Chronic Illness Warrior Foundation</h3>
+            <p>A mission-driven foundation concept designed to support people facing chronic illness, disability delays, and financial crisis.</p>
+            <span class="project-link">Case study coming soon</span>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">02</div>
+            <p class="project-type">AI / AUDIO / PYTHON</p>
+            <h3>Kokoro Voice Studio</h3>
+            <p>A local text-to-speech interface built with Python, Gradio, and Kokoro ONNX for fast voice generation.</p>
+            <span class="project-link">Local application</span>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">03</div>
+            <p class="project-type">WEB / SECURITY / WORDPRESS</p>
+            <h3>Landscapes Florida</h3>
+            <p>A small-business website project including content, design, hosting support, security cleanup, and recovery work.</p>
+            <span class="project-link">Website project</span>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">04</div>
+            <p class="project-type">AI / IMAGE / WORKFLOW</p>
+            <h3>Local AI Studio</h3>
+            <p>Hands-on experimentation with ComfyUI, Stable Diffusion, model workflows, image generation, and desktop AI tools.</p>
+            <span class="project-link">Workflow collection</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="content-section">
+      <div class="section-label">03 / SKILLS</div>
+      <div class="section-content">
+        <h2>Tools and strengths.</h2>
+        <div class="skills-grid">
+          <div><span>01</span> Leadership & Operations</div>
+          <div><span>02</span> Web Design & WordPress</div>
+          <div><span>03</span> AI Image Workflows</div>
+          <div><span>04</span> Python & Local AI</div>
+          <div><span>05</span> Branding & Creative Direction</div>
+          <div><span>06</span> Git, GitHub & Terminal</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <p class="eyebrow">CONTACT</p>
+      <h2>Let’s build something worth remembering.</h2>
+      <a class="button button-primary" href="mailto:your-email@example.com">Email Mark</a>
+      <p class="contact-note">Replace the placeholder email before publishing.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Mark Evans</span>
+    <span>Designed with nostalgia. Built for now.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
