@@ -1,33 +1,27 @@
-# Mark Evans Portfolio Starter
+# Mark Evans Portfolio — Phase 1
 
-A static personal portfolio with a retro-futuristic visual style and an animated Tato intro.
+Static HTML/CSS/JavaScript portfolio with a custom animated Tato intro.
 
-## Run locally
+## Phase 1 intro sequence
 
-Open `index.html` directly in a browser, or run a local server:
+- Glowing blue paw prints
+- Focused Tato walk-in
+- Spinner investigation and paw taps
+- Crouch and pounce
+- Particle explosion and portfolio reveal
+- Tato walk-off
+- Skip and replay controls
+- Plays once per browser session
+- Reduced-motion support
+
+## Preview
+
+Open `index.html` in a browser.
+
+## Publish updates
 
 ```bash
-cd mark-portfolio
-python3 -m http.server 8000
+git add .
+git commit -m "Build focused Tato intro"
+git push
 ```
-
-Then visit `http://localhost:8000`.
-
-## Customize before publishing
-
-1. Replace `your-email@example.com` in `index.html`.
-2. Update the About text and project descriptions.
-3. Replace the CSS-drawn placeholder dog with final Tato artwork or sprite animation.
-4. Add project screenshots in the `assets` folder.
-5. Update the page title and meta description if desired.
-
-## Free hosting
-
-This project can be uploaded directly to:
-
-- Cloudflare Pages
-- GitHub Pages
-- Netlify
-- Vercel
-
-No build command is required.
