@@ -11,36 +11,49 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="intro" class="intro" aria-label="Animated site intro">
-    <button id="skipIntro" class="skip-intro" type="button">Skip dog</button>
+  <div id="intro" class="intro" aria-label="Animated introduction featuring Tato">
+    <button id="skipIntro" class="skip-intro" type="button">Skip intro</button>
     <div class="scanlines"></div>
-    <div class="boot-copy" aria-live="polite">
+    <div class="intro-vignette"></div>
+
+    <div id="bootCopy" class="boot-copy" aria-live="polite">
       <span id="bootText">INITIALIZING PORTFOLIO</span><span class="cursor">_</span>
     </div>
 
-    <div id="loaderUnit" class="loader-unit">
-      <div class="spinner" aria-hidden="true"></div>
+    <div id="loaderUnit" class="loader-unit" aria-label="Loading indicator">
+      <div class="spinner-core">
+        <div class="spinner-ring"></div>
+        <div class="spinner-dot"></div>
+      </div>
       <div id="loadingText" class="loading-text">LOADING...</div>
     </div>
 
+    <div id="pawTrail" class="paw-trail" aria-hidden="true"></div>
+
     <div id="tato" class="tato" aria-hidden="true">
-      <div class="dog-body">
-        <div class="dog-ear ear-left"></div>
-        <div class="dog-ear ear-right"></div>
-        <div class="dog-head">
-          <div class="dog-eye eye-left"></div>
-          <div class="dog-eye eye-right"></div>
-          <div class="dog-nose"></div>
-        </div>
-        <div class="dog-torso"></div>
-        <div class="dog-leg leg-front"></div>
-        <div class="dog-leg leg-back"></div>
-        <div class="dog-tail"></div>
-      </div>
+      <div class="tato-shadow"></div>
+
+      <img
+        class="tato-pose tato-side"
+        src="assets/tato/tato-side.png"
+        alt=""
+      />
+
+      <img
+        class="tato-pose tato-focus"
+        src="assets/tato/tato-focus.png"
+        alt=""
+      />
+
+      <img
+        class="tato-pose tato-pounce"
+        src="assets/tato/tato-pounce.png"
+        alt=""
+      />
     </div>
 
     <div id="sparkField" class="spark-field" aria-hidden="true"></div>
-    <div id="marked" class="marked">TERRITORY MARKED.</div>
+    <div id="introMessage" class="intro-message">TARGET ACQUIRED.</div>
   </div>
 
   <header class="site-header">
@@ -58,9 +71,7 @@
       <div class="hero-copy">
         <p class="eyebrow">BUILDER / CREATOR / PROBLEM SOLVER</p>
         <h1>Mark<br />Evans</h1>
-        <p class="hero-text">
-          I build practical ideas, memorable digital experiences, and projects that combine technology, design, and purpose.
-        </p>
+        <p class="hero-text">I build practical ideas, memorable digital experiences, and projects that combine technology, design, and purpose.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">View projects</a>
           <button class="button button-ghost" id="replayIntro" type="button">Replay Tato intro</button>
@@ -78,12 +89,8 @@
       <div class="section-label">01 / ABOUT</div>
       <div class="section-content">
         <h2>Still building the next chapter.</h2>
-        <p>
-          My background spans leadership, operations, entrepreneurship, web design, AI tools, and creative problem-solving. I first experimented with web design during the Flash era and recently returned to building with modern tools.
-        </p>
-        <p>
-          Today, I’m focused on creating useful technology, developing the Chronic Illness Warrior Foundation, learning local AI workflows, and turning ideas into working projects.
-        </p>
+        <p>My background spans leadership, operations, entrepreneurship, web design, AI tools, and creative problem-solving. I first experimented with web design during the Flash era and recently returned to building with modern tools.</p>
+        <p>Today, I’m focused on creating useful technology, developing the Chronic Illness Warrior Foundation, learning local AI workflows, and turning ideas into working projects.</p>
       </div>
     </section>
 
@@ -92,37 +99,10 @@
       <div class="section-content">
         <h2>Selected work.</h2>
         <div class="project-grid">
-          <article class="project-card">
-            <div class="project-number">01</div>
-            <p class="project-type">NONPROFIT / BRAND / WEB</p>
-            <h3>Chronic Illness Warrior Foundation</h3>
-            <p>A mission-driven foundation concept designed to support people facing chronic illness, disability delays, and financial crisis.</p>
-            <span class="project-link">Case study coming soon</span>
-          </article>
-
-          <article class="project-card">
-            <div class="project-number">02</div>
-            <p class="project-type">AI / AUDIO / PYTHON</p>
-            <h3>Kokoro Voice Studio</h3>
-            <p>A local text-to-speech interface built with Python, Gradio, and Kokoro ONNX for fast voice generation.</p>
-            <span class="project-link">Local application</span>
-          </article>
-
-          <article class="project-card">
-            <div class="project-number">03</div>
-            <p class="project-type">WEB / SECURITY / WORDPRESS</p>
-            <h3>Landscapes Florida</h3>
-            <p>A small-business website project including content, design, hosting support, security cleanup, and recovery work.</p>
-            <span class="project-link">Website project</span>
-          </article>
-
-          <article class="project-card">
-            <div class="project-number">04</div>
-            <p class="project-type">AI / IMAGE / WORKFLOW</p>
-            <h3>Local AI Studio</h3>
-            <p>Hands-on experimentation with ComfyUI, Stable Diffusion, model workflows, image generation, and desktop AI tools.</p>
-            <span class="project-link">Workflow collection</span>
-          </article>
+          <article class="project-card"><div class="project-number">01</div><p class="project-type">NONPROFIT / BRAND / WEB</p><h3>Chronic Illness Warrior Foundation</h3><p>A mission-driven foundation concept designed to support people facing chronic illness, disability delays, and financial crisis.</p><span class="project-link">Case study coming soon</span></article>
+          <article class="project-card"><div class="project-number">02</div><p class="project-type">AI / AUDIO / PYTHON</p><h3>Kokoro Voice Studio</h3><p>A local text-to-speech interface built with Python, Gradio, and Kokoro ONNX for fast voice generation.</p><span class="project-link">Local application</span></article>
+          <article class="project-card"><div class="project-number">03</div><p class="project-type">WEB / SECURITY / WORDPRESS</p><h3>Landscapes Florida</h3><p>A small-business website project including content, design, hosting support, security cleanup, and recovery work.</p><span class="project-link">Website project</span></article>
+          <article class="project-card"><div class="project-number">04</div><p class="project-type">AI / IMAGE / WORKFLOW</p><h3>Local AI Studio</h3><p>Hands-on experimentation with ComfyUI, Stable Diffusion, model workflows, image generation, and desktop AI tools.</p><span class="project-link">Workflow collection</span></article>
         </div>
       </div>
     </section>
@@ -132,12 +112,7 @@
       <div class="section-content">
         <h2>Tools and strengths.</h2>
         <div class="skills-grid">
-          <div><span>01</span> Leadership & Operations</div>
-          <div><span>02</span> Web Design & WordPress</div>
-          <div><span>03</span> AI Image Workflows</div>
-          <div><span>04</span> Python & Local AI</div>
-          <div><span>05</span> Branding & Creative Direction</div>
-          <div><span>06</span> Git, GitHub & Terminal</div>
+          <div><span>01</span> Leadership & Operations</div><div><span>02</span> Web Design & WordPress</div><div><span>03</span> AI Image Workflows</div><div><span>04</span> Python & Local AI</div><div><span>05</span> Branding & Creative Direction</div><div><span>06</span> Git, GitHub & Terminal</div>
         </div>
       </div>
     </section>
@@ -150,11 +125,7 @@
     </section>
   </main>
 
-  <footer>
-    <span>© 2026 Mark Evans</span>
-    <span>Designed with nostalgia. Built for now.</span>
-  </footer>
-
+  <footer><span>© 2026 Mark Evans</span><span>Designed with nostalgia. Built for now.</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
