@@ -107,7 +107,8 @@ function playIntro() {
   resetIntro();
 
   later(() => {
-    startWalkPaws();
+    //
+startWalkPaws();
     tato.classList.add('walking');
   }, 550);
 
@@ -180,7 +181,7 @@ function playIntro() {
     document.querySelectorAll('.paw-print').forEach(paw => paw.classList.add('fade'));
   }, 10100);
 
-  later(finishIntro, 10850);
+  later(finishIntro, 10300);
 }
 
 skipIntro.addEventListener('click', finishIntro);
@@ -191,3 +192,40 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStor
 } else {
   playIntro();
 }
+
+
+/* =========================================================
+   TATO SIDE PEEK
+   ========================================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.tato-side-peek')) return;
+
+  const tatoPeek = document.createElement('div');
+  tatoPeek.className = 'tato-side-peek';
+  tatoPeek.setAttribute('aria-hidden', 'true');
+
+  tatoPeek.innerHTML = `
+    <div class="tato-bark-bubble">Bark, bark</div>
+    <img src="assets/tato/tato-focus.png" alt="">
+  `;
+
+  document.body.appendChild(tatoPeek);
+
+  let isPeeking = false;
+
+  function showTatoPeek() {
+    if (isPeeking || !intro.classList.contains('hidden')) return;
+
+    isPeeking = true;
+    tatoPeek.classList.add('show');
+
+    window.setTimeout(() => {
+      tatoPeek.classList.remove('show');
+      isPeeking = false;
+    }, 4000);
+  }
+
+  window.setInterval(showTatoPeek, 30000);
+});
+

@@ -1345,3 +1345,287 @@
   }
 }
 
+
+/* Hide intro paw-print trail */
+#pawTrail {
+  display: none !important;
+}
+
+/* TATO INTRO — SIMPLE MOTION POLISH */
+
+/* Slightly slower, smoother entrance walk */
+#intro #tato.walking {
+  animation-duration: 3.1s !important;
+  animation-timing-function: ease-in-out !important;
+}
+
+/* Make the loading target react to Tato */
+#intro #loaderUnit.rapid {
+  animation: tatoTargetWobble 0.34s ease-in-out infinite alternate;
+}
+
+#intro #loaderUnit.doomed {
+  animation: tatoTargetImpact 0.18s ease-in-out infinite alternate;
+}
+
+@keyframes tatoTargetWobble {
+  from {
+    transform: translateX(-3px) rotate(-2deg) scale(1);
+  }
+  to {
+    transform: translateX(3px) rotate(2deg) scale(1.04);
+  }
+}
+
+@keyframes tatoTargetImpact {
+  from {
+    transform: translate(-4px, 1px) rotate(-3deg) scale(1.04);
+  }
+  to {
+    transform: translate(4px, -1px) rotate(3deg) scale(0.97);
+  }
+}
+
+/* Keep the paw-print layer hidden */
+#pawTrail {
+  display: none !important;
+}
+
+
+/* =========================================================
+   TATO SIDE PEEK
+   ========================================================= */
+
+.tato-side-peek {
+  position: fixed;
+  right: -190px;
+  bottom: 28px;
+  width: 180px;
+  z-index: 9998;
+  pointer-events: none;
+  transition: right 0.65s cubic-bezier(.2, .8, .25, 1);
+}
+
+.tato-side-peek.show {
+  right: -22px;
+}
+
+.tato-side-peek img {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin-left: auto;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.38));
+}
+
+.tato-bark-bubble {
+  position: absolute;
+  right: 112px;
+  top: 8px;
+  min-width: 92px;
+  padding: 10px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  background: rgba(12, 18, 30, 0.94);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px) scale(0.9);
+  transition:
+    opacity 0.25s ease 0.45s,
+    transform 0.25s ease 0.45s;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.tato-bark-bubble::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: 15px;
+  width: 16px;
+  height: 16px;
+  background: rgba(12, 18, 30, 0.94);
+  border-top: 2px solid rgba(255, 255, 255, 0.85);
+  border-right: 2px solid rgba(255, 255, 255, 0.85);
+  transform: rotate(45deg);
+}
+
+.tato-side-peek.show .tato-bark-bubble {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+@media (max-width: 600px) {
+  .tato-side-peek {
+    bottom: 18px;
+    width: 145px;
+  }
+
+  .tato-side-peek.show {
+    right: -32px;
+  }
+
+  .tato-side-peek img {
+    width: 120px;
+  }
+
+  .tato-bark-bubble {
+    right: 91px;
+    top: 2px;
+    font-size: 12px;
+    padding: 8px 11px;
+  }
+}
+
+
+/* Move Tato's recurring peek to the left side */
+.tato-side-peek {
+  left: -190px;
+  right: auto;
+}
+
+.tato-side-peek.show {
+  left: -22px;
+  right: auto;
+}
+
+.tato-side-peek img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.tato-bark-bubble {
+  left: 112px;
+  right: auto;
+}
+
+.tato-bark-bubble::after {
+  left: -10px;
+  right: auto;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+  border-left: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 600px) {
+  .tato-side-peek.show {
+    left: -32px;
+    right: auto;
+  }
+
+  .tato-bark-bubble {
+    left: 91px;
+    right: auto;
+  }
+}
+
+
+/* Refine Tato side peek */
+.tato-side-peek.show {
+  left: 8px;
+  right: auto;
+}
+
+.tato-bark-bubble {
+  transition:
+    opacity 0.25s ease 1.8s,
+    transform 0.25s ease 1.8s;
+}
+
+@media (max-width: 600px) {
+  .tato-side-peek.show {
+    left: 0;
+    right: auto;
+  }
+}
+
+
+/* Final Tato speech-bubble fix */
+.tato-bark-bubble {
+  opacity: 0;
+  transform: translateX(-8px) scale(0.92);
+  transition:
+    opacity 0.15s ease 0s,
+    transform 0.15s ease 0s;
+}
+
+/* Delay applies only while appearing */
+.tato-side-peek.show .tato-bark-bubble {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition:
+    opacity 0.25s ease 1.8s,
+    transform 0.25s ease 1.8s;
+}
+
+/* Rebuild the bubble pointer cleanly */
+.tato-bark-bubble::after {
+  content: "";
+  position: absolute;
+  left: -11px;
+  right: auto;
+  bottom: 13px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 11px solid rgba(12, 18, 30, 0.94);
+  transform: none;
+}
+
+
+/* Clean final Tato speech bubble */
+.tato-bark-bubble {
+  top: 2px;
+  left: 118px;
+  right: auto;
+  min-width: 0;
+  padding: 9px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  overflow: visible;
+}
+
+/* Remove the old broken pointer */
+.tato-bark-bubble::after {
+  display: none !important;
+}
+
+/* Add one clean pointer */
+.tato-bark-bubble::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  bottom: 11px;
+  width: 14px;
+  height: 14px;
+  background: rgba(12, 18, 30, 0.94);
+  border-left: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+  transform: rotate(45deg);
+}
+
+
+/* Hero alias beneath name */
+.hero-alias {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  color: #5ee7f2;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .hero-alias {
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+  }
+}
+
