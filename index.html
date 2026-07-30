@@ -9,6 +9,132 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20260729-1" />
+
+<style id="nn-patreon-styles">
+  .nn-patreon {
+    width: min(1180px, calc(100% - 48px)) !important;
+    margin: 110px auto 120px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .nn-patreon-line {
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(150, 170, 195, 0.18) !important;
+  }
+
+  .nn-patreon-content {
+    position: relative !important;
+    padding: 100px 20px !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  .nn-patreon-content::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 520px !important;
+    height: 260px !important;
+    transform: translate(-50%, -50%) !important;
+    background: radial-gradient(
+      ellipse,
+      rgba(35, 217, 255, 0.07),
+      transparent 68%
+    ) !important;
+    pointer-events: none !important;
+  }
+
+  .nn-patreon-kicker {
+    position: relative !important;
+    display: block !important;
+    margin-bottom: 26px !important;
+    color: #27ddff !important;
+    font-family: monospace !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.28em !important;
+  }
+
+  .nn-patreon h2 {
+    position: relative !important;
+    max-width: 980px !important;
+    margin: 0 auto !important;
+    color: #f1f4f8 !important;
+    font-size: clamp(3.2rem, 7vw, 6.8rem) !important;
+    font-weight: 750 !important;
+    line-height: 0.94 !important;
+    letter-spacing: -0.065em !important;
+  }
+
+  .nn-patreon p {
+    position: relative !important;
+    max-width: 700px !important;
+    margin: 34px auto 38px !important;
+    color: rgba(185, 199, 218, 0.72) !important;
+    font-size: clamp(1rem, 1.5vw, 1.15rem) !important;
+    line-height: 1.75 !important;
+  }
+
+  .nn-patreon-button {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 15px 22px !important;
+    border: 1px solid rgba(39, 221, 255, 0.55) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #f1f4f8 !important;
+    font-size: 0.95rem !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.02em !important;
+    text-decoration: none !important;
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      box-shadow 180ms ease !important;
+  }
+
+  .nn-patreon-button:hover {
+    transform: translateY(-3px) !important;
+    background: rgba(39, 221, 255, 0.09) !important;
+    box-shadow: 0 14px 38px rgba(39, 221, 255, 0.12) !important;
+  }
+
+  .nn-patreon-arrow {
+    color: #27ddff !important;
+    font-size: 1.15rem !important;
+    transition: transform 180ms ease !important;
+  }
+
+  .nn-patreon-button:hover .nn-patreon-arrow {
+    transform: translate(3px, -3px) !important;
+  }
+
+  @media (max-width: 700px) {
+    .nn-patreon {
+      width: calc(100% - 28px) !important;
+      margin: 70px auto 80px !important;
+    }
+
+    .nn-patreon-content {
+      padding: 72px 4px !important;
+    }
+
+    .nn-patreon h2 {
+      font-size: clamp(2.7rem, 13vw, 4.4rem) !important;
+    }
+
+    .nn-patreon p {
+      margin-top: 26px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <div id="intro" class="intro" aria-label="Animated introduction featuring Tato">
@@ -166,7 +292,37 @@
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    
+<section id="patreon" class="nn-patreon">
+  <div class="nn-patreon-line"></div>
+
+  <div class="nn-patreon-content">
+    <span class="nn-patreon-kicker">DIGITAL ASSETS</span>
+
+    <h2>
+      Make your website<br>
+      impossible to ignore.
+    </h2>
+
+    <p>
+      Premium loading screens, animated website assets, UI components,
+      and interactive designs built for creators who want more than ordinary.
+    </p>
+
+    <a
+      href="https://www.patreon.com/thenillaninja"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nn-patreon-button"
+    >
+      <span>Explore My Patreon</span>
+      <span class="nn-patreon-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+</section>
+
+<section id="contact" class="contact-section">
       <p class="eyebrow">CONTACT</p>
       <h2>Let’s build something worth remembering.</h2>
       <a class="button button-primary" href="mailto:thenillaninja@gmail.com">Email Mark</a>
