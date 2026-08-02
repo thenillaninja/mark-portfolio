@@ -274,3 +274,20 @@ if (mobileMenuToggle && primaryNav) {
     }
   });
 }
+
+/* Make the logo return to the true top of the page */
+const homeLogo = document.querySelector('.brand-logo');
+
+if (homeLogo) {
+  homeLogo.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    history.replaceState(null, '', window.location.pathname);
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
+}
