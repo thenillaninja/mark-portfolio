@@ -1959,3 +1959,8 @@
 .contact-section {
   padding-top: 90px;
 }
+
+/* Center Asset Library feature tags */
+.nn-patreon-details {
+  justify-content: center;
+}
