@@ -229,3 +229,16 @@ document.addEventListener('DOMContentLoaded', () => {
   window.setInterval(showTatoPeek, 30000);
 });
 
+
+/* Start at the top after a full page load instead of restoring an anchor */
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname);
+  }
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant"
+  });
+});
