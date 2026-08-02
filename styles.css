@@ -1875,3 +1875,87 @@
     text-transform: uppercase;
   }
 }
+
+/* NillaNinja Asset Library refresh */
+.nn-patreon-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(42px, 7vw, 100px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 110px 24px 125px;
+}
+
+.nn-patreon-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 36px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(87, 227, 255, 0.13), transparent 45%),
+    linear-gradient(145deg, rgba(16, 23, 32, 0.9), rgba(5, 7, 10, 0.78));
+}
+
+.nn-patreon-mark img {
+  display: block;
+  width: min(100%, 260px);
+  height: auto;
+  filter: drop-shadow(0 0 28px rgba(87, 227, 255, 0.2));
+}
+
+.nn-patreon-mark span {
+  margin-top: 26px;
+  color: var(--muted);
+  font: 700 0.66rem "Space Mono", monospace;
+  letter-spacing: 0.16em;
+  text-align: center;
+}
+
+.nn-patreon-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 32px;
+}
+
+.nn-patreon-details span {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: 700 0.64rem "Space Mono", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 820px) {
+  .nn-patreon-layout {
+    grid-template-columns: 1fr;
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  .nn-patreon-mark {
+    min-height: 280px;
+  }
+
+  .nn-patreon-mark img {
+    width: min(72%, 230px);
+  }
+}
+
+.nn-patreon-layout {
+  grid-template-columns: 1fr;
+}
+
+/* Tighten spacing before Contact */
+.nn-patreon-layout {
+  padding-bottom: 60px;
+}
+
+.contact-section {
+  padding-top: 90px;
+}
