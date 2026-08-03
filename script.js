@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   tatoPeek.setAttribute('aria-hidden', 'true');
 
   tatoPeek.innerHTML = `
-    <div class="tato-bark-bubble">Bark, bark</div>
+    <div class="tato-bark-bubble">Seen Any Treats..</div>
     <img src="assets/tato/tato-focus.png" alt="">
   `;
 
