@@ -3,380 +3,563 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mark Evans — builder, creator, problem solver." />
-  <title>Mark Evans | Portfolio</title>
+  <meta
+    name="description"
+    content="NillaNinja Business Dojo helps small businesses understand how they operate, identify practical improvements, and build lasting business knowledge."
+  />
+
+  <title>NillaNinja Business Dojo</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260729-1" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
 
-<style id="nn-patreon-styles">
-  .nn-patreon {
-    width: min(1180px, calc(100% - 48px)) !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: 0 !important;
-  }
-
-  .nn-patreon-line {
-    width: 100% !important;
-    height: 1px !important;
-    background: rgba(150, 170, 195, 0.18) !important;
-  }
-
-  .nn-patreon-content {
-    position: relative !important;
-    padding: 0 !important;
-    text-align: center !important;
-    overflow: hidden !important;
-  }
-
-  .nn-patreon-content::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    width: 520px !important;
-    height: 260px !important;
-    transform: translate(-50%, -50%) !important;
-    background: radial-gradient(
-      ellipse,
-      rgba(35, 217, 255, 0.07),
-      transparent 68%
-    ) !important;
-    pointer-events: none !important;
-  }
-
-  .nn-patreon-kicker {
-    position: relative !important;
-    display: block !important;
-    margin-bottom: 26px !important;
-    color: #27ddff !important;
-    font-family: monospace !important;
-    font-size: 0.76rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.28em !important;
-  }
-
-  .nn-patreon h2 {
-    position: relative !important;
-    max-width: 980px !important;
-    margin: 0 auto !important;
-    color: #f1f4f8 !important;
-    font-size: clamp(3.2rem, 7vw, 6.8rem) !important;
-    font-weight: 750 !important;
-    line-height: 0.94 !important;
-    letter-spacing: -0.065em !important;
-  }
-
-  .nn-patreon p {
-    position: relative !important;
-    max-width: 700px !important;
-    margin: 34px auto 38px !important;
-    color: rgba(185, 199, 218, 0.72) !important;
-    font-size: clamp(1rem, 1.5vw, 1.15rem) !important;
-    line-height: 1.75 !important;
-  }
-
-  .nn-patreon-button {
-    position: relative !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 16px !important;
-    padding: 15px 22px !important;
-    border: 1px solid rgba(39, 221, 255, 0.55) !important;
-    border-radius: 999px !important;
-    background: transparent !important;
-    color: #f1f4f8 !important;
-    font-size: 0.95rem !important;
-    font-weight: 650 !important;
-    letter-spacing: 0.02em !important;
-    text-decoration: none !important;
-    transition:
-      transform 180ms ease,
-      background 180ms ease,
-      box-shadow 180ms ease !important;
-  }
-
-  .nn-patreon-button:hover {
-    transform: translateY(-3px) !important;
-    background: rgba(39, 221, 255, 0.09) !important;
-    box-shadow: 0 14px 38px rgba(39, 221, 255, 0.12) !important;
-  }
-
-  .nn-patreon-arrow {
-    color: #27ddff !important;
-    font-size: 1.15rem !important;
-    transition: transform 180ms ease !important;
-  }
-
-  .nn-patreon-button:hover .nn-patreon-arrow {
-    transform: translate(3px, -3px) !important;
-  }
-
-  @media (max-width: 700px) {
-    .nn-patreon {
-      width: calc(100% - 28px) !important;
-      margin: 0 auto !important;
-    }
-
-    .nn-patreon-content {
-      padding: 0 !important;
-    }
-
-    .nn-patreon h2 {
-      font-size: clamp(2.7rem, 13vw, 4.4rem) !important;
-    }
-
-    .nn-patreon p {
-      margin-top: 26px !important;
-    }
-  }
-</style>
-
-  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
-  <link rel="shortcut icon" href="/favicon.ico?v=3">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
+
 <body>
-  <div id="intro" class="intro" aria-label="Animated introduction featuring Tato">
-    <button id="skipIntro" class="skip-intro" type="button">Skip intro</button>
-    <div class="scanlines"></div>
-    <div class="intro-vignette"></div>
-
-    <div id="bootCopy" class="boot-copy" aria-live="polite">
-      <span id="bootText">INITIALIZING PORTFOLIO</span><span class="cursor">_</span>
-    </div>
-
-    <div id="loaderUnit" class="loader-unit" aria-label="Loading indicator">
-      <div class="spinner-core">
-        <div class="spinner-ring"></div>
-        <div class="spinner-dot"></div>
-      </div>
-      <div id="loadingText" class="loading-text">LOADING...</div>
-    </div>
-
-    <div id="pawTrail" class="paw-trail" aria-hidden="true"></div>
-
-    <div id="tato" class="tato" aria-hidden="true">
-      <div class="tato-shadow"></div>
-
-      <img
-        class="tato-pose tato-side"
-        src="assets/tato/tato-side.png"
-        alt=""
-      />
-
-      <img
-        class="tato-pose tato-focus"
-        src="assets/tato/tato-focus.png"
-        alt=""
-      />
-
-      <img
-        class="tato-pose tato-pounce"
-        src="assets/tato/tato-pounce.png"
-        alt=""
-      />
-    </div>
-
-    <div id="sparkField" class="spark-field" aria-hidden="true"></div>
-    <div id="introMessage" class="intro-message">TARGET ACQUIRED.</div>
-  </div>
-
   <header class="site-header">
-    <a href="#top" class="brand brand-logo" aria-label="NillaNinja home">
-      <img src="assets/brand/nillaninja-logo-half.png" alt="NillaNinja" />
-    </a>
-    <button
-      class="mobile-menu-toggle"
-      id="mobileMenuToggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="primaryNav"
-      aria-label="Open navigation menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="site-header-inner">
+      <a href="#top" class="brand brand-logo" aria-label="NillaNinja Business Dojo home">
+        <img src="assets/brand/nillaninja-logo-half.png" alt="NillaNinja" />
+      </a>
 
-    <nav id="primaryNav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Work</a>
-      <a href="#skills">Capabilities</a>
-      <a href="#patreon">Asset Library</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <button
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="primaryNav" aria-label="Primary navigation">
+        <a href="#about">What It Does</a>
+        <a href="#foundation">Why It Works</a>
+        <a href="#method">Method</a>
+        <a href="#mind">Dojo Mind</a>
+        <a href="whitepaper.html">White Paper</a>
+        <a href="#release">Release</a>
+      </nav>
+    </div>
   </header>
 
   <main id="top">
-    <section class="hero section-grid">
+    <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">BUILDER / CREATOR / DREAMER</p>
-        <h1>Mark<br />Evans</h1>
-        <div class="hero-alias">aka The NillaNinja</div>
-        <p class="hero-text">I create distinctive websites, digital experiences, and brand-driven projects for businesses, creators, and ideas that deserve to stand out.</p>
+        <p class="eyebrow">NILLANINJA BUSINESS DOJO</p>
+
+        <h1>
+          Understand your business.<br />
+          Improve it with purpose.
+        </h1>
+
+        <p class="hero-text">
+          Business Dojo helps small businesses understand how they operate,
+          identify what deserves attention, turn recommendations into focused
+          action, measure what happens, and preserve what they learn — building
+          stronger business knowledge with every improvement cycle.
+        </p>
+
         <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Explore selected work</a>
-          <button class="button button-ghost" id="replayIntro" type="button">Replay Tato intro</button>
+          <a class="button button-primary" href="#about">Explore Business Dojo</a>
+          <a class="button button-ghost" href="#release">Release Status</a>
         </div>
       </div>
-      <div class="hero-panel tato-system-panel" aria-hidden="true">
-        <div class="tato-system-grid"></div>
-        <div class="tato-system-scan"></div>
 
-        <div class="tato-system-header">
-          <div class="system-title">
-            <span class="system-paw">🐾</span>
-            <div>
-              <strong>TATO SYSTEM</strong>
-              <small>SIGNAL INTERFACE</small>
-            </div>
-          </div>
-
-          <span class="system-version">EST. 2003 / REBUILT 2026</span>
-        </div>
-
-        <div class="tato-target-ring ring-outer"></div>
-        <div class="tato-target-ring ring-inner"></div>
-        <div class="target-cross target-cross-top">+</div>
-        <div class="target-cross target-cross-left">+</div>
-        <div class="target-cross target-cross-right">+</div>
-
-        <div class="tato-emblem">
-          <div class="tato-emblem-glow"></div>
-          <img
-            src="assets/tato/tato-focus.png"
-            alt=""
-            class="tato-hero-image"
-          />
-        </div>
-
-        <div class="signal-origin"></div>
-
-        <div class="system-status status-left">
-          <span class="status-light"></span>
+      <aside class="hero-demo" aria-label="Business Dojo product preview">
+        <div class="demo-header">
           <div>
-            <strong>SIGNAL LOCKED</strong>
-            <small>CONFIDENCE: 100%</small>
+            <p class="status-label">BUSINESS SNAPSHOT</p>
+            <strong>Business health</strong>
+          </div>
+
+          <div class="demo-score">
+            <span id="demoScore">68</span>
+            <small>/ 100</small>
           </div>
         </div>
 
-        <div class="system-status status-right">
-          <div>
-            <strong>MASCOT SYSTEM</strong>
-            <small>ACTIVE&nbsp; ▮▮▮▮▮▮</small>
+        <div class="demo-metric">
+          <div class="demo-metric-row">
+            <span>Operations</span>
+            <span>72%</span>
+          </div>
+          <div class="demo-bar">
+            <span style="--demo-width: 72%"></span>
           </div>
         </div>
 
-        <div class="system-motto">
-          <span>LOYAL. CURIOUS. FOCUSED.</span>
-          <strong>THE BOSS AROUND HERE.</strong>
-          <small>🐾</small>
+        <div class="demo-metric">
+          <div class="demo-metric-row">
+            <span>Consistency</span>
+            <span>54%</span>
+          </div>
+          <div class="demo-bar">
+            <span style="--demo-width: 54%"></span>
+          </div>
         </div>
-      </div>
+
+        <div class="demo-metric">
+          <div class="demo-metric-row">
+            <span>Follow-through</span>
+            <span>63%</span>
+          </div>
+          <div class="demo-bar">
+            <span style="--demo-width: 63%"></span>
+          </div>
+        </div>
+
+        <div class="demo-recommendation" id="demoRecommendation">
+          <span class="demo-kicker">RECOMMENDATION</span>
+          <strong>Document your weekly scheduling process.</strong>
+          <p>Turn a repeated task into a consistent operating practice.</p>
+        </div>
+
+        <div class="demo-progress">
+          <span class="demo-step is-active">Observe</span>
+          <span class="demo-step">Prioritize</span>
+          <span class="demo-step">Act</span>
+          <span class="demo-step">Learn</span>
+        </div>
+
+        <div class="demo-memory" id="demoMemory">
+          <span class="demo-memory-dot"></span>
+          <span>Dojo Mind ready</span>
+        </div>
+      </aside>
     </section>
 
     <section id="about" class="content-section">
-      <div class="section-label">01 / ABOUT</div>
-      <div class="section-content">
-        <h2>Built from experience. Driven by curiosity.</h2>
-        <p>NillaNinja is the creative identity behind my work in web design, digital experiences, branding, AI-assisted workflows, and practical problem-solving.</p>
-        <p>My background in leadership, operations, entrepreneurship, and technology helps me approach projects from both sides: how they should look, and how they need to work in the real world.</p>
-      </div>
-    </section>
+      <div class="section-label">01 / WHAT IT DOES</div>
 
-    <section id="projects" class="content-section projects-section">
-      <div class="section-label">02 / PROJECTS</div>
       <div class="section-content">
-        <h2>Selected work.</h2>
-        <div class="project-grid">
-          <article class="project-card"><div class="project-number">01</div><p class="project-type">NONPROFIT / BRAND / STRATEGY</p><h3>Chronic Illness Warrior Foundation</h3><p>A mission-driven foundation concept built around advocacy, practical support, thoughtful branding, and the belief that no warrior should fight alone.</p><span class="project-link">Foundation in development</span></article>
-          <a class="project-card project-card-link" href="https://thenillaninja.github.io/hero-experience-volume-01-genesis/" target="_blank" rel="noopener noreferrer"><div class="project-number">02</div><p class="project-type">INTERACTIVE WEB / MOTION / FRONT-END</p><h3>Hero Experience — Genesis</h3><p>A cinematic, responsive hero experience built with lightweight HTML, CSS, and JavaScript, featuring motion, depth, spotlight interaction, and polished transitions.</p><span class="project-link">View live experience ↗</span></a>
-          <a class="project-card project-card-link" href="https://www.patreon.com/thenillaninja" target="_blank" rel="noopener noreferrer"><div class="project-number">03</div><p class="project-type">DIGITAL PRODUCTS / INTERACTION / CODE</p><h3>The NillaNinja Asset Library</h3><p>A growing collection of animated loading systems, hero experiences, and reusable website assets built with lightweight HTML, CSS, and JavaScript.</p><span class="project-link">Explore the asset library ↗</span></a>
-          <a class="project-card project-card-link" href="https://landscapesfl.com" target="_blank" rel="noopener noreferrer"><div class="project-number">04</div><p class="project-type">SMALL BUSINESS / WEB / SECURITY</p><h3>Landscapes Florida</h3><p>A small-business website project covering design, content, hosting support, security cleanup, recovery, and ongoing technical problem-solving.</p><span class="project-link">Visit client website ↗</span></a>
-          <a class="project-card project-card-link" href="https://thenillaninja.github.io/accessibility-snapshot/" target="_blank" rel="noopener noreferrer"><div class="project-number">05</div><p class="project-type">ACCESSIBILITY / EDUCATION / FRONT-END</p><h3>Accessibility Snapshot</h3><p>A lightweight educational accessibility checker that reviews webpage HTML, explains common barriers in plain English, and provides practical guidance and improved code examples.</p><span class="project-link">View live accessibility checker ↗</span></a>
+        <p class="eyebrow">FROM SNAPSHOT TO STRONGER OPERATIONS</p>
+
+        <h2>
+          More than an assessment.<br />
+          A process for improving the business.
+        </h2>
+
+        <p>
+          A Business Snapshot creates a structured view of how the business
+          operates today — surfacing strengths, weaknesses, operating gaps,
+          risks, and opportunities that may otherwise compete for attention.
+        </p>
+
+        <p>
+          Business Dojo then helps turn that understanding into practical
+          follow-through. Recommendations explain why an issue matters, what
+          impact an improvement may have, how difficult it may be, and what a
+          realistic next step looks like.
+        </p>
+
+        <div class="capability-grid">
+          <article>
+            <span>01</span>
+            <h3>Understand</h3>
+            <p>
+              Build a structured Snapshot of the business instead of relying
+              on disconnected problems and assumptions.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Prioritize</h3>
+            <p>
+              Identify meaningful opportunities without turning every finding
+              into another competing project.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Follow Through</h3>
+            <p>
+              Turn recommendations into focused actions, track progress, and
+              capture what actually happened.
+            </p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Build Knowledge</h3>
+            <p>
+              Preserve useful outcomes, lessons, recurring work, and operating
+              practices so future decisions start with better context.
+            </p>
+          </article>
+        </div>
+
+        <div class="statement-panel">
+          <p class="statement-label">THE DIFFERENCE</p>
+          <strong>
+            A later Snapshot should not return the business to the same
+            starting point.
+          </strong>
+          <p>
+            Business Dojo is designed so each improvement cycle can leave the
+            business with more useful knowledge than it had before.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="content-section">
-      <div class="section-label">03 / SKILLS</div>
+    <section id="foundation" class="content-section">
+      <div class="section-label">02 / WHY IT WORKS</div>
+
       <div class="section-content">
-        <h2>Capabilities built for real-world projects.</h2>
-        <div class="skills-grid">
-          <div><span>01</span> Web Design & Front-End Development</div><div><span>02</span> App Development & UX/UI Design</div><div><span>03</span> Brand Direction & Digital Identity</div><div><span>04</span> Interactive Experiences & Motion</div><div><span>05</span> Small-Business Strategy & AI Workflows</div><div><span>06</span> Technical Problem-Solving & Deployment</div>
+        <p class="eyebrow">ESTABLISHED THINKING / PRACTICAL APPLICATION</p>
+
+        <h2>
+          Built on real business theory.<br />
+          Applied for smaller businesses.
+        </h2>
+
+        <p>
+          Business Dojo did not begin with the assumption that AI could simply
+          tell a business what to do. The method draws from established ideas
+          in continuous improvement, organizational learning, knowledge
+          management, systems thinking, performance measurement, management
+          attention, and responsible human-AI interaction.
+        </p>
+
+        <p>
+          Those disciplines approach business improvement from different
+          directions, but they repeatedly reinforce several practical ideas:
+          understand the current state, make deliberate changes, study the
+          result, preserve useful learning, improve the system, and keep human
+          judgment involved.
+        </p>
+
+        <div class="foundation-grid">
+          <article>
+            <span>CONTINUOUS IMPROVEMENT</span>
+            <h3>Test. Study. Adapt.</h3>
+            <p>
+              Influenced by PDSA and PDCA thinking, an improvement is treated
+              as something to evaluate — not proof that the original
+              recommendation was correct.
+            </p>
+          </article>
+
+          <article>
+            <span>ORGANIZATIONAL LEARNING</span>
+            <h3>Turn experience into capability.</h3>
+            <p>
+              Improvement becomes more valuable when useful lessons survive
+              the moment that created them and inform future decisions.
+            </p>
+          </article>
+
+          <article>
+            <span>SYSTEMS THINKING</span>
+            <h3>Improve the business, not just the symptom.</h3>
+            <p>
+              Local fixes can create problems elsewhere. Business Dojo
+              encourages decisions to be considered within the larger
+              operating system.
+            </p>
+          </article>
+
+          <article>
+            <span>MANAGEMENT ATTENTION</span>
+            <h3>Not everything important must happen now.</h3>
+            <p>
+              Small businesses have limited time, people, money, and attention.
+              Focus is treated as an operating constraint, not a motivational
+              problem.
+            </p>
+          </article>
+        </div>
+
+        <p class="method-note">
+          Business Dojo does not claim to have invented these underlying
+          principles. Its proposed contribution is connecting them into a
+          practical learning architecture designed around the realities of
+          smaller businesses.
+        </p>
+      </div>
+    </section>
+
+    <section id="method" class="content-section">
+      <div class="section-label">03 / THE METHOD</div>
+
+      <div class="section-content">
+        <p class="eyebrow">THE BUSINESS DOJO METHOD</p>
+
+        <h2>
+          Improvement should accumulate learning.
+        </h2>
+
+        <p>
+          The Business Dojo Method organizes improvement into nine connected
+          stages. It is not intended as a rigid one-time checklist. Businesses
+          can move forward, revisit an earlier stage, revise an assumption, or
+          begin another cycle as new information becomes available.
+        </p>
+
+        <div class="method-sequence-grid">
+          <article>
+            <span>01</span>
+            <strong>Understand</strong>
+            <p>See the business you actually have.</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <strong>Focus</strong>
+            <p>Decide what deserves attention now.</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <strong>Improve</strong>
+            <p>Act deliberately on a meaningful opportunity.</p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <strong>Measure</strong>
+            <p>Ask what actually happened.</p>
+          </article>
+
+          <article>
+            <span>05</span>
+            <strong>Remember</strong>
+            <p>Preserve the lesson and its context.</p>
+          </article>
+
+          <article>
+            <span>06</span>
+            <strong>Systemize</strong>
+            <p>Turn what works into repeatable practice.</p>
+          </article>
+
+          <article>
+            <span>07</span>
+            <strong>Reassess</strong>
+            <p>Compare where the business was with where it is now.</p>
+          </article>
+
+          <article>
+            <span>08</span>
+            <strong>Assist</strong>
+            <p>Use accumulated context to support better decisions.</p>
+          </article>
+
+          <article>
+            <span>09</span>
+            <strong>Automate</strong>
+            <p>Delegate suitable work when the process is ready.</p>
+          </article>
+        </div>
+
+        <div class="sequence-callout">
+          <p class="statement-label">WHY THE SEQUENCE MATTERS</p>
+
+          <h3>Automation can scale weakness just as easily as strength.</h3>
+
+          <p>
+            Business Dojo intentionally places automation downstream of
+            understanding, learning, and systemization. Repetition alone does
+            not make a process ready for delegation.
+          </p>
+
+          <p>
+            The goal is not maximum automation. The goal is appropriate
+            delegation built on enough context, process maturity, boundaries,
+            and human authority.
+          </p>
         </div>
       </div>
     </section>
 
-    
-<section id="patreon" class="nn-patreon">
-  <div class="nn-patreon-line"></div>
+    <section id="mind" class="content-section">
+      <div class="section-label">04 / DOJO MIND</div>
 
-  <div class="nn-patreon-layout">
-    <div class="nn-patreon-content">
-      <span class="nn-patreon-kicker">DIGITAL PRODUCTS / FRONT-END EXPERIENCES</span>
+      <div class="section-content">
+        <p class="eyebrow">ORGANIZATIONAL + DECISION MEMORY</p>
 
-      <h2>
-        Website assets built<br>
-        to leave a mark.
-      </h2>
+        <h2>
+          Your business should remember what it learns.
+        </h2>
+
+        <p>
+          Dojo Mind is the persistent knowledge layer inside Business Dojo.
+          Its purpose is not simply to store information. It preserves useful
+          relationships between what was observed, why a decision was made,
+          what action followed, what happened, and what the business learned.
+        </p>
+
+        <p>
+          Over time, Snapshots can connect with recommendations, actions,
+          outcomes, adopted practices, recurring work, and Business Systems.
+          That history allows future assessments to begin with context instead
+          of repeatedly returning to generic assumptions.
+        </p>
+
+        <div class="memory-flow">
+          <span>Snapshot</span>
+          <b>→</b>
+          <span>Decision</span>
+          <b>→</b>
+          <span>Action</span>
+          <b>→</b>
+          <span>Outcome</span>
+          <b>→</b>
+          <span>Lesson</span>
+          <b>→</b>
+          <span>System</span>
+        </div>
+
+        <div class="statement-panel">
+          <p class="statement-label">THE COMPOUNDING EFFECT</p>
+          <strong>
+            One Snapshot can provide insight. A history of Snapshots,
+            decisions, actions, and outcomes can provide understanding.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai" class="content-section">
+      <div class="section-label">05 / AI + CONTEXT</div>
+
+      <div class="section-content">
+        <p class="eyebrow">AI SUPPORTS THE METHOD</p>
+
+        <h2>
+          AI is a capability.<br />
+          It is not the methodology.
+        </h2>
+
+        <p>
+          General AI can know a great deal about business while knowing very
+          little about one particular business — its operating history,
+          constraints, failed attempts, priorities, relationships, and
+          day-to-day realities.
+        </p>
+
+        <p>
+          Business Dojo approaches that limitation by building context before
+          relying on increasingly intelligent assistance. AI can help analyze
+          Snapshot findings, identify patterns, compare changes, surface
+          historical outcomes, generate recommendations, prepare drafts, and
+          eventually assist with carefully bounded execution.
+        </p>
+
+        <div class="ai-principle">
+          <span>GENERAL BUSINESS KNOWLEDGE</span>
+          <b>+</b>
+          <span>DOJO MIND CONTEXT</span>
+          <b>→</b>
+          <strong>MORE CONTEXTUAL ASSISTANCE</strong>
+        </div>
+
+        <p>
+          The owner remains responsible for judgment. Business decisions can
+          involve relationships, values, risk tolerance, local conditions,
+          employee dynamics, customer expectations, and practical experience
+          that software may never represent completely.
+        </p>
+
+        <div class="statement-panel">
+          <p class="statement-label">PRODUCT PHILOSOPHY</p>
+          <strong>
+            The goal is not to make the business more dependent on AI.
+            The goal is to make the business more capable.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="whitepaper-preview">
+      <div class="whitepaper-preview-inner">
+        <p class="eyebrow">THE BUSINESS DOJO METHOD</p>
+
+        <h2>Want the thinking behind the system?</h2>
+
+        <p>
+          The Business Dojo Method white paper explores the theoretical
+          foundations, nine-stage improvement method, Dojo Mind, systemization
+          before automation, the role of AI, Earned Automation, operational
+          principles, limitations, and the plan for real-world validation.
+        </p>
+
+        <p class="whitepaper-disclaimer">
+          The paper distinguishes between ideas supported by prior research,
+          Business Dojo's interpretation of those ideas, and the parts of the
+          method that remain proposals requiring future validation.
+        </p>
+
+        <a class="button button-ghost" href="whitepaper.html">
+          Read the White Paper
+        </a>
+      </div>
+    </section>
+
+    <section id="release" class="release-section">
+      <p class="eyebrow">RELEASE ROADMAP</p>
+
+      <h2>Business Dojo is preparing for its first beta.</h2>
+
+      <div class="release-grid">
+        <article class="release-card complete">
+          <span>FOUNDATION</span>
+          <strong>Core system</strong>
+          <p>Assessment, reporting, recommendations, progress, and business memory.</p>
+        </article>
+
+        <article class="release-card active">
+          <span>NOW</span>
+          <strong>Beta preparation</strong>
+          <p>Product refinement, release infrastructure, documentation, and testing.</p>
+        </article>
+
+        <article class="release-card upcoming">
+          <span>NEXT</span>
+          <strong>Private beta</strong>
+          <p>Real-world use with a small group of businesses before wider release.</p>
+        </article>
+      </div>
+
+      <p class="release-note">
+        Additional release details will be published here as Business Dojo
+        approaches beta.
+      </p>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <p class="eyebrow">CONTACT</p>
+
+      <h2>Interested in Business Dojo?</h2>
 
       <p>
-        A growing collection of animated loading systems, cinematic hero sections,
-        interactive components, and lightweight front-end experiences built with
-        HTML, CSS, and JavaScript.
+        For beta interest, partnerships, product questions, or general
+        inquiries, reach out anytime.
       </p>
 
-      <div class="nn-patreon-details">
-        <span>Responsive</span>
-        <span>Lightweight</span>
-        <span>Framework-free</span>
-      </div>
-
-      <a
-        href="https://www.patreon.com/thenillaninja"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nn-patreon-button"
-      >
-        <span>Explore the Asset Library</span>
-        <span class="nn-patreon-arrow" aria-hidden="true">↗</span>
+      <a class="button button-primary" href="mailto:hello@nillaninja.com">
+        hello@nillaninja.com
       </a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact-section">
-      <p class="eyebrow">CONTACT</p>
-      <h2>Let’s build something worth remembering.</h2>
-      <a class="button button-primary" href="mailto:thenillaninja@gmail.com">Email Mark</a>
-      <p class="contact-note">thenillaninja@gmail.com</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-copy">
-      <span>© 2026 Mark Evans</span>
-      <span>Designed with nostalgia. Built for now.</span>
-    </div>
-
-    <div class="footer-tato" aria-hidden="true">
-      <div class="footer-tato-shadow"></div>
-      <img
-        src="assets/tato/tato-focus.png"
-        alt=""
-        class="footer-tato-image"
-      />
-
-      <div class="tato-speech-bubble">
-        Hi, I’m Tato.<br />
-        The Bestest Boy Ever.
-      </div>
-    </div>
+    <span>© 2026 NillaNinja</span>
+    <span>Business Dojo — practical business improvement, built to grow with you.</span>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
