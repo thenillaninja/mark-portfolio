@@ -1,0 +1,391 @@
+:root {
+  --bg: #05070a;
+  --surface: #0b1017;
+  --surface-raised: #101720;
+  --text: #f5f7fa;
+  --muted: #9aa7b4;
+  --line: rgba(255, 255, 255, 0.1);
+  --cyan: #57e3ff;
+  --purple: #7c5cff;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(87, 227, 255, 0.05), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(124, 92, 255, 0.05), transparent 28%),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+/* Header */
+
+.security-site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 7, 10, 0.94);
+}
+
+.security-site-header-inner {
+  width: min(var(--max-width), calc(100% - 48px));
+  min-height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.security-site-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.security-site-brand img {
+  display: block;
+  width: 170px;
+  height: auto;
+}
+
+.security-back-link {
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.security-back-link:hover,
+.security-back-link:focus-visible {
+  color: var(--cyan);
+  transform: translateX(-2px);
+}
+
+/* Main page */
+
+.security-page {
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 100px 0 120px;
+}
+
+.security-hero {
+  max-width: 900px;
+  padding-bottom: 90px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--cyan);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.security-hero h1 {
+  margin: 0;
+  max-width: 820px;
+  font-size: clamp(3.2rem, 8vw, 6.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.security-intro {
+  max-width: 760px;
+  margin: 30px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.75;
+}
+
+.security-principle {
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+  padding: clamp(28px, 5vw, 46px);
+  border: 1px solid rgba(87, 227, 255, 0.28);
+  background:
+    radial-gradient(
+      circle at 86% 18%,
+      rgba(124, 92, 255, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(16, 23, 32, 0.94),
+      rgba(5, 7, 10, 0.88)
+    );
+}
+
+.security-principle::after {
+  content: "TRUST";
+  position: absolute;
+  right: -14px;
+  bottom: -30px;
+  color: rgba(87, 227, 255, 0.025);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
+.security-principle > * {
+  position: relative;
+  z-index: 1;
+}
+
+.security-principle-label {
+  margin: 0 0 18px;
+  color: var(--cyan);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.security-principle strong {
+  display: block;
+  max-width: 790px;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.35;
+}
+
+/* Numbered sections */
+
+.security-section {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 42px;
+  padding: 78px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-number {
+  margin: 5px 0 0;
+  color: rgba(87, 227, 255, 0.55);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.security-section-content {
+  max-width: 800px;
+}
+
+.security-section h2 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.security-section p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.security-section p:last-child {
+  margin-bottom: 0;
+}
+
+.security-callout {
+  margin-top: 30px;
+  padding: 24px 26px;
+  border-left: 2px solid var(--cyan);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(87, 227, 255, 0.055),
+      rgba(87, 227, 255, 0.015)
+    );
+}
+
+.security-callout strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+/* Final commitment */
+
+.security-commitment {
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  padding: clamp(36px, 7vw, 70px);
+  border: 1px solid rgba(87, 227, 255, 0.24);
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(87, 227, 255, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(16, 23, 32, 0.92),
+      rgba(5, 7, 10, 0.9)
+    );
+}
+
+.security-commitment::after {
+  content: "SECURE";
+  position: absolute;
+  right: -18px;
+  bottom: -34px;
+  color: rgba(87, 227, 255, 0.022);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(5rem, 16vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
+.security-commitment > * {
+  position: relative;
+  z-index: 1;
+}
+
+.security-commitment h2 {
+  max-width: 820px;
+  margin: 0 0 28px;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.security-commitment > p:not(.eyebrow) {
+  max-width: 780px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* Footer */
+
+.security-site-footer {
+  border-top: 1px solid var(--line);
+}
+
+.security-site-footer-inner {
+  width: min(var(--max-width), calc(100% - 48px));
+  min-height: 110px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.security-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.security-footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.security-footer-links a:hover,
+.security-footer-links a:focus-visible {
+  color: var(--cyan);
+}
+
+@media (max-width: 760px) {
+  .security-site-header-inner,
+  .security-site-footer-inner {
+    width: calc(100% - 28px);
+  }
+
+  .security-site-header-inner {
+    min-height: 70px;
+  }
+
+  .security-site-brand img {
+    width: 145px;
+  }
+
+  .security-back-link {
+    font-size: 0.84rem;
+  }
+
+  .security-page {
+    width: calc(100% - 28px);
+    padding: 72px 0 90px;
+  }
+
+  .security-hero {
+    padding-bottom: 64px;
+  }
+
+  .security-hero h1 {
+    font-size: clamp(2.9rem, 15vw, 4.8rem);
+  }
+
+  .security-intro {
+    margin-top: 24px;
+  }
+
+  .security-principle {
+    margin-top: 36px;
+  }
+
+  .security-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 58px 0;
+  }
+
+  .section-number {
+    margin: 0;
+  }
+
+  .security-section h2 {
+    margin-bottom: 22px;
+  }
+
+  .security-callout {
+    padding: 20px;
+  }
+
+  .security-commitment {
+    margin-top: 20px;
+  }
+
+  .security-site-footer-inner {
+    min-height: 140px;
+    padding: 28px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .security-footer-links {
+    gap: 16px 22px;
+  }
+}

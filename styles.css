@@ -1285,3 +1285,86 @@ h3 {
     padding: 24px;
   }
 }
+
+/* =========================================================
+   SECURITY & PRIVACY PREVIEW
+   ========================================================= */
+
+.security-preview {
+  width: min(var(--max-width), calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 120px;
+}
+
+.security-preview-inner {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(34px, 6vw, 64px);
+  border: 1px solid rgba(124, 92, 255, 0.24);
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(124, 92, 255, 0.11),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 12% 82%,
+      rgba(87, 227, 255, 0.05),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(12, 16, 24, 0.94),
+      rgba(5, 7, 10, 0.9)
+    );
+}
+
+.security-preview-inner::after {
+  content: "TRUST";
+  position: absolute;
+  right: -10px;
+  bottom: -34px;
+  color: rgba(124, 92, 255, 0.035);
+  font-family: "Space Mono", monospace;
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  pointer-events: none;
+}
+
+.security-preview h2,
+.security-preview p,
+.security-preview a {
+  position: relative;
+  z-index: 1;
+}
+
+.security-preview h2 {
+  max-width: 760px;
+}
+
+.security-preview p {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.security-preview-note {
+  margin-bottom: 28px;
+  padding-left: 18px;
+  border-left: 2px solid rgba(124, 92, 255, 0.65);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 760px) {
+  .security-preview {
+    width: calc(100% - 28px);
+    padding-bottom: 90px;
+  }
+
+  .security-preview-inner::after {
+    right: 6px;
+    bottom: -20px;
+    font-size: 6.5rem;
+  }
+}
