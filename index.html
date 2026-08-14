@@ -698,6 +698,80 @@
     <span>Business Dojo — practical business improvement, built to grow with you.</span>
   </footer>
 
+  <div
+    class="beta-modal-backdrop"
+    id="betaModal"
+    aria-hidden="true"
+  >
+    <section
+      class="beta-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="betaModalTitle"
+      aria-describedby="betaModalDescription"
+    >
+      <button
+        class="beta-modal-close"
+        id="betaModalClose"
+        type="button"
+        aria-label="Close private beta invitation"
+      >
+        ×
+      </button>
+
+      <div class="beta-modal-visual" aria-hidden="true">
+        <div class="beta-modal-signal">
+          <span class="beta-modal-signal-ring beta-modal-signal-ring-one"></span>
+          <span class="beta-modal-signal-ring beta-modal-signal-ring-two"></span>
+          <span class="beta-modal-signal-core"></span>
+        </div>
+
+        <div class="beta-modal-status-card">
+          <span>PRIVATE BETA</span>
+          <strong>Real businesses. Real feedback.</strong>
+          <div class="beta-modal-status-line">
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="beta-modal-copy">
+        <p class="eyebrow">PRIVATE BETA</p>
+
+        <h2 id="betaModalTitle">
+          Interested in helping shape Business Dojo?
+        </h2>
+
+        <p id="betaModalDescription">
+          We're preparing a small private beta with owner-operated businesses
+          and small teams willing to use Business Dojo in real-world
+          conditions and tell us what works, what doesn't, and what matters.
+        </p>
+
+        <div class="beta-modal-actions">
+          <a
+            class="button button-primary"
+            href="mailto:hello@nillaninja.com?subject=Business%20Dojo%20Beta%20Interest"
+          >
+            I'm Interested
+          </a>
+
+          <button
+            class="button button-ghost beta-modal-dismiss"
+            id="betaModalDismiss"
+            type="button"
+          >
+            Not Right Now
+          </button>
+        </div>
+
+        <p class="beta-modal-footnote">
+          No mailing list. No spam. Just a way to raise your hand for beta consideration.
+        </p>
+      </div>
+    </section>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
