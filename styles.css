@@ -385,7 +385,7 @@ h3 {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1100px) {
   .site-header {
     width: min(var(--max-width), calc(100% - 28px));
   }
@@ -483,7 +483,7 @@ h3 {
   scroll-margin-top: 92px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1100px) {
   .site-header {
     min-height: 64px;
     padding-top: 8px;
