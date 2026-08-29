@@ -245,6 +245,59 @@
     </section>
 
 
+
+    <!-- PRODUCT TOUR -->
+    <section class="overview-tour">
+
+      <div class="overview-tour-header">
+        <p class="eyebrow">BUSINESS DOJO PRODUCT TOUR</p>
+
+        <h2>See the process.</h2>
+
+        <p>
+          Walk through the Business Dojo experience — from the first
+          operational assessment to recommendations, focused action,
+          progress tracking, and persistent business memory.
+        </p>
+      </div>
+
+      <div class="overview-carousel" id="overviewCarousel">
+
+        <button
+          class="overview-carousel-button overview-carousel-prev"
+          type="button"
+          aria-label="Previous screenshot"
+        >
+          ‹
+        </button>
+
+        <div
+          class="overview-carousel-track"
+          id="overviewCarouselTrack"
+        >
+          <div class="overview-carousel-empty">
+            Loading product screenshots...
+          </div>
+        </div>
+
+        <button
+          class="overview-carousel-button overview-carousel-next"
+          type="button"
+          aria-label="Next screenshot"
+        >
+          ›
+        </button>
+
+      </div>
+
+      <div
+        class="overview-carousel-dots"
+        id="overviewCarouselDots"
+        aria-label="Product tour navigation"
+      ></div>
+
+    </section>
+
     <!-- NOT THIS -->
     <section class="overview-not">
 
@@ -389,6 +442,229 @@
         });
       });
     })();
+  </script>
+
+
+  <script>
+  (() => {
+    const folder = "assets/business-dojo-tour/";
+
+    const track = document.querySelector("#overviewCarouselTrack");
+    const dots = document.querySelector("#overviewCarouselDots");
+    const prev = document.querySelector(".overview-carousel-prev");
+    const next = document.querySelector(".overview-carousel-next");
+
+    if (!track || !dots || !prev || !next) {
+      return;
+    }
+
+    const imageExtensions = [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".webp",
+      ".gif"
+    ];
+
+    let current = 0;
+    let slides = [];
+    let dotButtons = [];
+
+    async function loadScreenshots() {
+      try {
+        const response = await fetch(folder);
+
+        if (!response.ok) {
+          throw new Error("Could not read screenshot folder.");
+        }
+
+        const directoryHtml = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(
+          directoryHtml,
+          "text/html"
+        );
+
+        const files = [...doc.querySelectorAll("a")]
+          .map(link =>
+            decodeURIComponent(
+              link.getAttribute("href") || ""
+            )
+          )
+          .filter(name => {
+            const lower = name.toLowerCase();
+
+            return imageExtensions.some(ext =>
+              lower.endsWith(ext)
+            );
+          })
+          .filter(name => !name.includes("/"))
+          .sort((a, b) =>
+            a.localeCompare(
+              b,
+              undefined,
+              {
+                numeric: true,
+                sensitivity: "base"
+              }
+            )
+          );
+
+        if (!files.length) {
+          track.innerHTML = `
+            <div class="overview-carousel-empty">
+              Product screenshots coming soon.
+            </div>
+          `;
+
+          prev.hidden = true;
+          next.hidden = true;
+
+          return;
+        }
+
+        track.innerHTML = "";
+
+        files.forEach((filename, index) => {
+          const slide = document.createElement("article");
+          slide.className = "overview-carousel-slide";
+
+          const number =
+            String(index + 1).padStart(2, "0");
+
+          slide.innerHTML = `
+            <img
+              src="${folder}${encodeURIComponent(filename)}"
+              alt="Business Dojo product screenshot ${index + 1}"
+              loading="${index === 0 ? "eager" : "lazy"}"
+            >
+
+            <div class="overview-carousel-caption">
+              <span>
+                ${number} / BUSINESS DOJO
+              </span>
+            </div>
+          `;
+
+          track.appendChild(slide);
+
+          const dot = document.createElement("button");
+          dot.className = "overview-carousel-dot";
+          dot.type = "button";
+          dot.setAttribute(
+            "aria-label",
+            `Go to screenshot ${index + 1}`
+          );
+
+          dot.addEventListener("click", () => {
+            current = index;
+            update();
+          });
+
+          dots.appendChild(dot);
+        });
+
+        slides = [
+          ...document.querySelectorAll(
+            ".overview-carousel-slide"
+          )
+        ];
+
+        dotButtons = [
+          ...document.querySelectorAll(
+            ".overview-carousel-dot"
+          )
+        ];
+
+        update();
+      } catch (error) {
+        console.error(error);
+
+        track.innerHTML = `
+          <div class="overview-carousel-empty">
+            Product screenshots coming soon.
+          </div>
+        `;
+
+        prev.hidden = true;
+        next.hidden = true;
+      }
+    }
+
+    function update() {
+      track.style.transform =
+        `translateX(-${current * 100}%)`;
+
+      dotButtons.forEach((dot, index) => {
+        dot.classList.toggle(
+          "active",
+          index === current
+        );
+      });
+    }
+
+    prev.addEventListener("click", () => {
+      if (!slides.length) return;
+
+      current =
+        (current - 1 + slides.length) %
+        slides.length;
+
+      update();
+    });
+
+    next.addEventListener("click", () => {
+      if (!slides.length) return;
+
+      current =
+        (current + 1) %
+        slides.length;
+
+      update();
+    });
+
+    let startX = null;
+
+    track.addEventListener(
+      "touchstart",
+      event => {
+        startX = event.touches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    track.addEventListener(
+      "touchend",
+      event => {
+        if (
+          startX === null ||
+          !slides.length
+        ) {
+          return;
+        }
+
+        const diff =
+          event.changedTouches[0].clientX -
+          startX;
+
+        if (Math.abs(diff) > 50) {
+          current =
+            diff < 0
+              ? (current + 1) % slides.length
+              : (current - 1 + slides.length) %
+                slides.length;
+
+          update();
+        }
+
+        startX = null;
+      },
+      { passive: true }
+    );
+
+    loadScreenshots();
+  })();
   </script>
 
 </body>
