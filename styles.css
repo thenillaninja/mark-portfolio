@@ -2567,3 +2567,135 @@ body.beta-modal-open {
     flex-basis: 8px;
   }
 }
+
+
+/* =========================================================
+   HERO — OVERVIEW CTA
+   ========================================================= */
+
+.hero-overview-cta {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: -34px;
+  padding: 20px 22px;
+  border: 1px solid rgba(87, 227, 255, 0.18);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 23, 32, 0.84),
+      rgba(8, 12, 17, 0.9)
+    );
+}
+
+.hero-overview-cta > div {
+  min-width: 0;
+}
+
+.hero-overview-cta > div > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-family: "Space Mono", monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.hero-overview-cta p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.hero-overview-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 11px 14px;
+  border: 1px solid rgba(87, 227, 255, 0.28);
+  color: var(--text);
+  font-family: "Space Mono", monospace;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.hero-overview-link:hover,
+.hero-overview-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(87, 227, 255, 0.55);
+  background: rgba(87, 227, 255, 0.05);
+  color: var(--accent);
+}
+
+.hero-overview-link span {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1100px) {
+  .hero-overview-cta {
+    grid-column: 1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-overview-cta {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .hero-overview-link {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+/* Overview CTA vertical layout */
+
+.hero-overview-cta {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  min-height: 92px;
+}
+
+.hero-overview-cta > span {
+  color: var(--accent);
+  font-family: "Space Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+}
+
+.hero-overview-link {
+  align-self: flex-start;
+}
+
+/* Center overview CTA content */
+
+.hero-overview-cta {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overview-link {
+  align-self: center;
+}
